@@ -7,5 +7,5 @@ public abstract class Sorting {
         this.array = array;
     }
 
-    abstract void sort();
+    public abstract void sort();
 }

@@ -1,11 +1,12 @@
 package arraySorting;
 
-/** Сортировка пузырьком. Временная сложность O(n^2).
+/** Сортировка пузырьком. Проходим по всем элементам массива до тех пор, пока не останется ни одной пары элементов,
+ * которые следует поменять местами.
  * @author Сергей Шершавин*/
 
-public class BubbleSorting extends Sorting {
+public class BubbleSort extends Sorting {
 
-    public BubbleSorting(int[] array) {
+    public BubbleSort(int[] array) {
         super(array);
     }
 
