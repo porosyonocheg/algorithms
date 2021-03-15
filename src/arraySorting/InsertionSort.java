@@ -1,6 +1,8 @@
 package arraySorting;
 
-/** Сортировка вставками
+/** Сортировка вставками. Проходя весь массив, полученный на каждой интерации элемент сравниваем последовательно
+ * со всеми предыдущими элементами, если текущее значение меньше предыдущего, перемещаем больший элемент вперёд,
+ * иначе вставляем текущий элемент и продолжаем обход массива.
  * @author Сергей Шершавин*/
 
 public class InsertionSort extends Sorting {
@@ -11,22 +13,14 @@ public class InsertionSort extends Sorting {
 
     @Override
     public void sort() {
-        for (int left = 1; left < array.length; left++) {
-            // Вытаскиваем значение элемента
-            int value = array[left];
-            // Перемещаемся по элементам, которые перед вытащенным элементом
-            int i = left - 1;
-            for (; i >= 0; i--) {
-                // Если вытащили значение меньшее — передвигаем больший элемент дальше
-                if (value < array[i]) {
-                    array[i + 1] = array[i];
-                } else {
-                    // Если вытащенный элемент больше — останавливаемся
-                    break;
-                }
+        for (int i = 1; i < array.length; i++) {
+            int value = array[i];
+            int left = i - 1;
+            while (left >= 0 && value < array[left]) {
+                array[left + 1] = array[left];
+                left--;
             }
-            // В освободившееся место вставляем вытащенное значение
-            array[i + 1] = value;
+            array[left + 1] = value;
         }
     }
 }
