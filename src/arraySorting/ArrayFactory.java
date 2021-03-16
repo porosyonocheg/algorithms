@@ -28,10 +28,12 @@ public class ArrayFactory {
         for (int i = 0; i < size; i++) array[i] = (int) (Math.random()*Integer.MAX_VALUE);
         return array;
     }
-    /**@return  целочисленный массив случайных чисел.
+    /**@return  целочисленный массив случайных чисел с ограничением на различное число элементов.
      * @param size размер создаваемого массива
-     * @param maxRepeatCount*/
-    public static int[] getRandomArrayWithSetOfRepeatingElements(int size, int maxRepeatCount) {
-        return null;
+     * @param numberOfDifferentElements число различных элементов массива*/
+    public static int[] getRandomArrayWithSetOfRepeatingElements(int size, int numberOfDifferentElements) {
+        int[] array = new int[size];
+        for (int i = 0; i < size; i++) array[i] = (int) (Math.random()*numberOfDifferentElements);
+        return array;
     }
 }
