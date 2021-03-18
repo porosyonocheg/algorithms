@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 
 public class SortingTests {
 
-    public void compareSorts(List<Sorting> list) {
+    public static void compareSorts(List<Sorting> list) {
         List<Long> time = new ArrayList<>();
         for (Sorting s : list) {
         long t1 = System.nanoTime();
@@ -36,7 +36,7 @@ public class SortingTests {
         }
     }
 
-    public void compareSortMethodWithUtilArraysSort(Sorting sorting, int[] result) {
+    public static void compareSortMethodWithUtilArraysSort(Sorting sorting, int[] result) {
         long t1 = System.nanoTime();
         sorting.sort();
         long t2 = System.nanoTime();
@@ -308,7 +308,7 @@ public class SortingTests {
     }
 
     @Test
-    public void compareSortsTest() {
+    public static void compareSortsTest() {
         int[] nums = ArrayFactory.getRandomArray(1111);
         int[] nums1 = nums.clone();
         int[] nums2 = nums.clone();
