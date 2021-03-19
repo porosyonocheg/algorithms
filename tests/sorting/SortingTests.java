@@ -308,7 +308,7 @@ public class SortingTests {
     }
 
     @Test
-    public static void compareSortsTest() {
+    public void compareSortsTest() {
         int[] nums = ArrayFactory.getRandomArray(1111);
         int[] nums1 = nums.clone();
         int[] nums2 = nums.clone();
