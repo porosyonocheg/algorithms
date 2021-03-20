@@ -32,6 +32,15 @@ public class ArrayFactory {
         return array;
     }
 
+    /**@return  целочисленный массив случайных неотрицательных чисел.
+     * @param size размер создаваемого массива*/
+    public static int[] getRandomValueLimitedArray(int size) {
+        int[] array = new int[size];
+        int sign = (int) (Math.random()*2) == 0 ? 1 : -1;
+        for (int i = 0; i < size; i++) array[i] = (int) (Math.random()*100000)*sign;
+        return array;
+    }
+
     /**@return  целочисленный массив случайных чисел с ограничением на различное число элементов.
      * @param size размер создаваемого массива
      * @param repeats число повторов элементов массива,
