@@ -5,14 +5,10 @@ package arraySorting;
  * иначе вставляем текущий элемент и продолжаем обход массива.
  * @author Сергей Шершавин*/
 
-public class InsertionSort extends Sorting {
-
-    public InsertionSort(int[] array) {
-        super(array);
-    }
+public class InsertionSort implements Sorting {
 
     @Override
-    public void sort() {
+    public void sort(int[] array) {
         for (int i = 1; i < array.length; i++) {
             int value = array[i];
             int left = i - 1;

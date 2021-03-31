@@ -4,10 +4,7 @@ package arraySorting;
  * станут отсортированными, сливаем их воедино, сортируя каждую объединяемую группу.
  * @Сергей Шершавин*/
 
-public class MergeSort extends Sorting {
-    public MergeSort(int[] array) {
-        super(array);
-    }
+public class MergeSort implements Sorting {
 
     private void mergeSort(int[] array, int length) {
         if (length < 2) {
@@ -49,7 +46,7 @@ public class MergeSort extends Sorting {
     }
 
     @Override
-    public void sort() {
+    public void sort(int[] array) {
         mergeSort(array, array.length);
     }
 }

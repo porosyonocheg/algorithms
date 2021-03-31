@@ -10,13 +10,15 @@ import static org.junit.Assert.*;
 
 public class SortingTests {
 
-    public static void compareSorts(List<Sorting> list) {
+    public static void compareSorts(List<Sorting> list, int[] nums) {
         List<Long> time = new ArrayList<>();
+        int[] nums1 = nums.clone();
         for (Sorting s : list) {
         long t1 = System.nanoTime();
-        s.sort();
+        s.sort(nums);
         long t2 = System.nanoTime();
         time.add(t2 - t1);
+        nums = nums1.clone();
         }
         boolean isSorted = false;
         while(!isSorted) {
@@ -36,9 +38,9 @@ public class SortingTests {
         }
     }
 
-    public static void compareSortMethodWithUtilArraysSort(Sorting sorting, int[] result) {
+    public static void compareSortMethodWithUtilArraysSort(Sorting sorting, int[] nums, int[] result) {
         long t1 = System.nanoTime();
-        sorting.sort();
+        sorting.sort(nums);
         long t2 = System.nanoTime();
         long e1 = System.nanoTime();
         Arrays.sort(result);
@@ -57,49 +59,49 @@ public class SortingTests {
         System.out.println("For arrays of size 11:");
         int[] nums = ArrayFactory.getSortedArrayInReverseOrder(11);
         int[] result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new BubbleSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new BubbleSort(), nums, result);
         assertArrayEquals(result, nums);
 
         nums = ArrayFactory.getSortedArray(11);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new BubbleSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new BubbleSort(), nums, result);
         assertArrayEquals(result, nums);
 
         nums = ArrayFactory.getRandomArray(11);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new BubbleSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new BubbleSort(), nums, result);
         assertArrayEquals(result, nums);
         System.out.println("======================================================");
         System.out.println("For arrays of size 1111:");
         nums = ArrayFactory.getSortedArrayInReverseOrder(1111);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new BubbleSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new BubbleSort(), nums, result);
         assertArrayEquals(result, nums);
 
         nums = ArrayFactory.getSortedArray(1111);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new BubbleSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new BubbleSort(), nums, result);
         assertArrayEquals(result, nums);
 
         nums = ArrayFactory.getRandomArray(1111);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new BubbleSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new BubbleSort(), nums, result);
         assertArrayEquals(result, nums);
         System.out.println("======================================================");
         System.out.println("For arrays of size 111111:");
         nums = ArrayFactory.getSortedArrayInReverseOrder(111111);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new BubbleSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new BubbleSort(), nums, result);
         assertArrayEquals(result, nums);
 
         nums = ArrayFactory.getSortedArray(111111);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new BubbleSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new BubbleSort(), nums, result);
         assertArrayEquals(result, nums);
 
         nums = ArrayFactory.getRandomArray(111111);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new BubbleSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new BubbleSort(), nums, result);
         assertArrayEquals(result, nums);
     }
 
@@ -108,49 +110,49 @@ public class SortingTests {
         System.out.println("For arrays of size 11:");
         int[] nums = ArrayFactory.getSortedArrayInReverseOrder(11);
         int[] result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new InsertionSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new InsertionSort(), nums, result);
         assertArrayEquals(result, nums);
 
         nums = ArrayFactory.getSortedArray(11);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new InsertionSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new InsertionSort(), nums, result);
         assertArrayEquals(result, nums);
 
         nums = ArrayFactory.getRandomArray(11);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new InsertionSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new InsertionSort(), nums, result);
         assertArrayEquals(result, nums);
         System.out.println("======================================================");
         System.out.println("For arrays of size 1111:");
         nums = ArrayFactory.getSortedArrayInReverseOrder(1111);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new InsertionSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new InsertionSort(), nums, result);
         assertArrayEquals(result, nums);
 
         nums = ArrayFactory.getSortedArray(1111);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new InsertionSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new InsertionSort(), nums, result);
         assertArrayEquals(result, nums);
 
         nums = ArrayFactory.getRandomArray(1111);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new InsertionSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new InsertionSort(), nums, result);
         assertArrayEquals(result, nums);
         System.out.println("======================================================");
         System.out.println("For arrays of size 111111:");
         nums = ArrayFactory.getSortedArrayInReverseOrder(111111);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new InsertionSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new InsertionSort(), nums, result);
         assertArrayEquals(result, nums);
 
         nums = ArrayFactory.getSortedArray(111111);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new InsertionSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new InsertionSort(), nums, result);
         assertArrayEquals(result, nums);
 
         nums = ArrayFactory.getRandomArray(111111);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new InsertionSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new InsertionSort(), nums, result);
         assertArrayEquals(result, nums);
     }
 
@@ -159,49 +161,49 @@ public class SortingTests {
         System.out.println("For arrays of size 11:");
         int[] nums = ArrayFactory.getSortedArrayInReverseOrder(11);
         int[] result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new SelectionSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new SelectionSort(), nums, result);
         assertArrayEquals(result, nums);
 
         nums = ArrayFactory.getSortedArray(11);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new SelectionSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new SelectionSort(), nums, result);
         assertArrayEquals(result, nums);
 
         nums = ArrayFactory.getRandomArray(11);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new SelectionSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new SelectionSort(), nums, result);
         assertArrayEquals(result, nums);
         System.out.println("======================================================");
         System.out.println("For arrays of size 1111:");
         nums = ArrayFactory.getSortedArrayInReverseOrder(1111);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new SelectionSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new SelectionSort(), nums, result);
         assertArrayEquals(result, nums);
 
         nums = ArrayFactory.getSortedArray(1111);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new SelectionSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new SelectionSort(), nums, result);
         assertArrayEquals(result, nums);
 
         nums = ArrayFactory.getRandomArray(1111);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new SelectionSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new SelectionSort(), nums, result);
         assertArrayEquals(result, nums);
         System.out.println("======================================================");
         System.out.println("For arrays of size 111111:");
         nums = ArrayFactory.getSortedArrayInReverseOrder(111111);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new SelectionSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new SelectionSort(), nums, result);
         assertArrayEquals(result, nums);
 
         nums = ArrayFactory.getSortedArray(111111);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new SelectionSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new SelectionSort(), nums, result);
         assertArrayEquals(result, nums);
 
         nums = ArrayFactory.getRandomArray(111111);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new SelectionSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new SelectionSort(), nums, result);
         assertArrayEquals(result, nums);
     }
 
@@ -210,49 +212,49 @@ public class SortingTests {
         System.out.println("For arrays of size 11:");
         int[] nums = ArrayFactory.getSortedArrayInReverseOrder(11);
         int[] result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new CombSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new CombSort(), nums, result);
         assertArrayEquals(result, nums);
 
         nums = ArrayFactory.getSortedArray(11);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new CombSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new CombSort(), nums, result);
         assertArrayEquals(result, nums);
 
         nums = ArrayFactory.getRandomArray(11);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new CombSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new CombSort(), nums, result);
         assertArrayEquals(result, nums);
         System.out.println("======================================================");
         System.out.println("For arrays of size 1111:");
         nums = ArrayFactory.getSortedArrayInReverseOrder(1111);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new CombSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new CombSort(), nums, result);
         assertArrayEquals(result, nums);
 
         nums = ArrayFactory.getSortedArray(1111);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new CombSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new CombSort(), nums, result);
         assertArrayEquals(result, nums);
 
         nums = ArrayFactory.getRandomArray(1111);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new CombSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new CombSort(), nums, result);
         assertArrayEquals(result, nums);
         System.out.println("======================================================");
         System.out.println("For arrays of size 111111:");
         nums = ArrayFactory.getSortedArrayInReverseOrder(111111);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new CombSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new CombSort(), nums, result);
         assertArrayEquals(result, nums);
 
         nums = ArrayFactory.getSortedArray(111111);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new CombSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new CombSort(), nums, result);
         assertArrayEquals(result, nums);
 
         nums = ArrayFactory.getRandomArray(111111);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new CombSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new CombSort(), nums, result);
         assertArrayEquals(result, nums);
     }
 
@@ -261,61 +263,59 @@ public class SortingTests {
         System.out.println("For arrays of size 11:");
         int[] nums = ArrayFactory.getSortedArrayInReverseOrder(11);
         int[] result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new ShellSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new ShellSort(), nums, result);
         assertArrayEquals(result, nums);
 
         nums = ArrayFactory.getSortedArray(11);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new ShellSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new ShellSort(), nums, result);
         assertArrayEquals(result, nums);
 
         nums = ArrayFactory.getRandomArray(11);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new ShellSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new ShellSort(), nums, result);
         assertArrayEquals(result, nums);
         System.out.println("======================================================");
         System.out.println("For arrays of size 1111:");
         nums = ArrayFactory.getSortedArrayInReverseOrder(1111);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new ShellSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new ShellSort(), nums, result);
         assertArrayEquals(result, nums);
 
         nums = ArrayFactory.getSortedArray(1111);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new ShellSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new ShellSort(), nums, result);
         assertArrayEquals(result, nums);
 
         nums = ArrayFactory.getRandomArray(1111);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new ShellSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new ShellSort(), nums, result);
         assertArrayEquals(result, nums);
         System.out.println("======================================================");
         System.out.println("For arrays of size 111111:");
         nums = ArrayFactory.getSortedArrayInReverseOrder(111111);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new ShellSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new ShellSort(), nums, result);
         assertArrayEquals(result, nums);
 
         nums = ArrayFactory.getSortedArray(111111);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new ShellSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new ShellSort(), nums, result);
         assertArrayEquals(result, nums);
 
         nums = ArrayFactory.getRandomArray(111111);
         result = nums.clone();
-        compareSortMethodWithUtilArraysSort(new ShellSort(nums), result);
+        compareSortMethodWithUtilArraysSort(new ShellSort(), nums, result);
         assertArrayEquals(result, nums);
     }
 
     @Test
     public void compareSortsTest() {
         int[] nums = ArrayFactory.getRandomArray(1111);
-        int[] nums1 = nums.clone();
-        int[] nums2 = nums.clone();
         List<Sorting> list = new ArrayList<>();
-        list.add(new BubbleSort(nums));
-        list.add(new InsertionSort(nums1));
-        list.add(new SelectionSort(nums2));
-        compareSorts(list);
+        list.add(new BubbleSort());
+        list.add(new InsertionSort());
+        list.add(new SelectionSort());
+        compareSorts(list, nums);
     }
 }

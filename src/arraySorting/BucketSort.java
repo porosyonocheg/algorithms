@@ -3,14 +3,11 @@ package arraySorting;
 /**Блочная сортировка.
  * @author Сергей Шершавин*/
 
-public class BucketSort extends Sorting {
-    public BucketSort(int[] array) {
-        super(array);
-    }
+public class BucketSort implements Sorting {
 
-    private void bucketSort(int left, int right, int[] temp) {
+    private void bucketSort(int[] array, int left, int right, int[] temp) {
         if (right - left <= 64) {
-            new InsertionSort(array).sort();
+            new InsertionSort().sort(array);
             return;
         }
         int curMin = array[left], curMax = array[left];
@@ -57,14 +54,14 @@ public class BucketSort extends Sorting {
         }
         for (int i = 0; i < size; i++) {
             int r = run[i];
-            if (r != 0) bucketSort(left + count[r - 1], left + count[r], temp);
-            else bucketSort(left, left + count[r], temp);
+            if (r != 0) bucketSort(array,left + count[r - 1], left + count[r], temp);
+            else bucketSort(array, left, left + count[r], temp);
         }
     }
 
     @Override
-    public void sort() {
+    public void sort(int[] array) {
         int[] temp = new int[array.length];
-        bucketSort(0, array.length, temp);
+        bucketSort(array, 0, array.length, temp);
     }
 }

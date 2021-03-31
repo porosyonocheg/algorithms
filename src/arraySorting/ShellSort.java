@@ -4,13 +4,10 @@ package arraySorting;
  * с некоторым шагом между ними, изначально определённым последовательностью Хиббарда и уменьшающимся в 2 раза на
  * каждой итерации*/
 
-public class ShellSort extends Sorting {
-    public ShellSort(int[] array) {
-        super(array);
-    }
+public class ShellSort implements Sorting {
 
     @Override
-    public void sort() {
+    public void sort(int[] array) {
         int step = 1;
         while (step < array.length) step <<= 1;
         step >>= 1;

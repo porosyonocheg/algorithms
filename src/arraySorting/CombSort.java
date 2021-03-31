@@ -2,24 +2,22 @@ package arraySorting;
 
 /**Сортировка расческой. Сравнение и перемещение (если необходимо) пар элементов на каждой итерации происходит
  * с некоторым шагом между ними, который изначально определяется длиной массива и уменьшается величиной
- * loadfactor (фактор уменьшения, имперически доказанное оптимальное значение данного параметра задано
- * в конструкторе по умолчанию).
+ * loadfactor (фактор уменьшения, имперически доказанное оптимальное значение данного параметра 1.247).
  * @author  Сергей Шершавин*/
 
-public class CombSort extends Sorting {
+public class CombSort implements Sorting {
     private final float loadFactor;
-    public CombSort(int[] array) {
-        super(array);
+
+    public CombSort() {
         loadFactor = 1.247f;
     }
 
-    public CombSort(int[] array, float loadFactor) {
-        super(array);
+    public CombSort(float loadFactor) {
         this.loadFactor = loadFactor;
     }
 
     @Override
-    public void sort() {
+    public void sort(int[] array) {
         int step = array.length;
         boolean flag = false;
         while (!flag) {

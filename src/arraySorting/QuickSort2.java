@@ -3,20 +3,17 @@ package arraySorting;
 /**@see QuickSort
  * @author Сергей Шершавин*/
 
-public class QuickSort2 extends Sorting {
-    public QuickSort2(int[] array) {
-        super(array);
-    }
+public class QuickSort2 implements Sorting {
 
-    private void quickSort(int start, int end) {
+    private void quickSort(int[] array, int start, int end) {
         if (end > start) {
-            int index = partition(start, end);
-            quickSort(start, index - 1);
-            quickSort(index + 1,  end);
+            int index = partition(array, start, end);
+            quickSort(array, start, index - 1);
+            quickSort(array,index + 1,  end);
         }
     }
 
-    private int partition(int start, int end) {
+    private int partition(int[] array, int start, int end) {
         int index = start + (end - start)/2;
         int pivot = array[index];
         int temp = array[index];
@@ -37,7 +34,7 @@ public class QuickSort2 extends Sorting {
     }
 
     @Override
-    public void sort() {
-        quickSort(0, array.length-1);
+    public void sort(int[] array) {
+        quickSort(array, 0, array.length-1);
     }
 }

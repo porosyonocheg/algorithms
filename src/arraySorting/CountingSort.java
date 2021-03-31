@@ -6,13 +6,10 @@ package arraySorting;
  * к текущему индексу массива рангов.
  *@author Сергей Шершавин */
 
-public class CountingSort extends Sorting {
-    public CountingSort(int[] array) {
-        super(array);
-    }
+public class CountingSort implements Sorting {
 
     @Override
-    public void sort() {
+    public void sort(int[] array) {
         int min = array[0], max = array[0];
         for (int i = 1; i < array.length; i++){
             if (array[i] > max)

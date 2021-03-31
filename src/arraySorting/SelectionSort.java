@@ -4,14 +4,10 @@ package arraySorting;
  * проход начинаем сдвигаясь вправо на 1.
  * @author Сергей Шершавин*/
 
-public class SelectionSort extends Sorting{
-
-    public SelectionSort(int[] array) {
-        super(array);
-    }
+public class SelectionSort implements Sorting {
 
     @Override
-    public void sort() {
+    public void sort(int[] array) {
         for (int left = 0; left < array.length; left++) {
             int minInd = left;
             for (int i = left; i < array.length; i++) {

@@ -5,12 +5,9 @@ package arraySorting;
  * поочередно на места уже отсортированных элементов.
  * @author Сергей Шершавин*/
 
-public class QuickSort extends Sorting {
-    public QuickSort(int[] array) {
-        super(array);
-    }
+public class QuickSort implements Sorting {
 
-    public void quickSort(int start, int end) {
+    public void quickSort(int[] array, int start, int end) {
         int i = start;
         int j = end;
         int pivot = array[start + (end - start)/2];
@@ -26,12 +23,12 @@ public class QuickSort extends Sorting {
         }
         while (i <= j);
 
-        if (start <  j) quickSort(start, j);
-        if (i < end) quickSort(i, end);
+        if (start <  j) quickSort(array, start, j);
+        if (i < end) quickSort(array, i, end);
     }
 
     @Override
-    public void sort() {
-        quickSort(0, array.length-1);
+    public void sort(int[] array) {
+        quickSort(array, 0, array.length-1);
     }
 }

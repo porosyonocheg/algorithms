@@ -4,14 +4,11 @@ package arraySorting;
  * которые следует поменять местами.
  * @author Сергей Шершавин*/
 
-public class BubbleSort extends Sorting {
+public class BubbleSort implements Sorting {
 
-    public BubbleSort(int[] array) {
-        super(array);
-    }
 
     @Override
-    public void sort() {
+    public void sort(int[] array) {
         boolean isSorted = false;
         while(!isSorted) {
             isSorted = true;
