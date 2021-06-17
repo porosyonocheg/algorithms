@@ -50,7 +50,7 @@ public class SortingTests {
         if (diff1 > diff2) {
         System.out.printf("util.Arrays sort is %.2f times faster%n", (diff1/(diff2*1.0)));
         }
-        else if (diff1 < diff2) System.out.printf("Custom sort is %.2f times faster%n", (diff2/(diff1*1.0)));
+        else if (diff1 < diff2) System.out.printf(sorting.getClass().getSimpleName() + " is %.2f times faster%n", (diff2/(diff1*1.0)));
         else System.out.println("Sorts are equal in time");
     }
 
