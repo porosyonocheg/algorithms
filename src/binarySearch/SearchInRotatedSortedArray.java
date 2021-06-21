@@ -48,4 +48,50 @@ public class SearchInRotatedSortedArray {
         }
         return false;
     }
+
+    /**@param nums массив, в котором производится поиск минимального элемента. Должен быть упорядочен по возрастанию
+     *               значений элементов и содержать уникальные значения (не иметь дубликатов), может быть повернут.
+     *               Пример: [1,2,3] = [3,1,2] = [2,3,1]
+     *@return значение минимального элемента массива */
+    public int getMinValue(int[] nums) {
+        int start = 0, end = nums.length - 1, middle;
+        while (start <= end) {
+            middle = start + (end - start)/2;
+            if (nums[start] > nums[end]) {
+                if (nums[middle] > nums[end]) {
+                    start = middle + 1;
+                }
+                else {
+                    end = middle;
+                }
+            }
+            else {
+                return nums[start];
+            }
+        }
+        return nums[end];
+    }
+
+    /**@param nums массив, в котором производится поиск максимального элемента. Должен быть упорядочен по возрастанию
+     *               значений элементов и содержать уникальные значения (не иметь дубликатов), может быть повернут.
+     *               Пример: [1,2,3] = [3,1,2] = [2,3,1]
+     *@return значение максимального элемента массива */
+    public int getMaxValue(int[] nums) {
+        int start = 0, end = nums.length - 1, middle;
+        while (start < end) {
+            middle = start + (end - start)/2;
+            if (nums[start] < nums[end]) {
+                if (nums[middle] < nums[end]) {
+                    start = middle + 1;
+                }
+                else {
+                    end = middle;
+                }
+            }
+            else {
+                end--;
+            }
+        }
+        return nums[end];
+    }
 }
