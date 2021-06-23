@@ -7,16 +7,23 @@ public class PartitionEqualSubsetSum {
 
     public boolean isPossible(int[] nums) {
         int targetSum = 0;
-        for (int n : nums) targetSum += n;
-        if (targetSum%2 != 0) return false; // если сумма нечетна - её нельзя разбить на две равные части
-        targetSum /= 2;
-        boolean[] dp = new boolean[targetSum + 1];
-        dp[0] = true;
-        for (int n : nums) {
-            for (int j = targetSum; j >= n; j--) {
-                dp[j] = dp[j] || dp[j - n]; // элемент n не включается в сумму j или включается
-            }
+        for (int i = 0; i < nums.length; i++) {
+            targetSum += nums[i];
         }
-        return dp[targetSum];
+
+        if (targetSum%2 != 0) return false;
+        targetSum /= 2;
+        return dfs(nums, targetSum, 0, 0, new Boolean[targetSum + 1]);
+    }
+
+    // subSums хранит в себе результаты предыдущих вычислений подсумм
+    // Результат для данного элемента массива (индекса) считаем для суммы включающей данный элемент или не включающей.
+    private boolean dfs(int[] nums, int target, int currentSum, int index, Boolean[] subSums) {
+        if (currentSum == target) return true;
+        if (index == nums.length || currentSum > target) return false;
+        if (subSums[currentSum] != null) return subSums[currentSum];
+        boolean result = dfs(nums, target, currentSum + nums[index], index + 1, subSums) || dfs(nums, target, currentSum, index + 1, subSums);
+        subSums[currentSum] = result;
+        return result;
     }
 }
