@@ -21,4 +21,21 @@ public class CoinChange {
         }
         return dp[amount] > amount ? -1 : dp[amount];
     }
+
+    /**@param coins номиналы имеющихся монет
+     * @param amount целевая сумма
+     * @return количество уникальных комбинаций из имеющихся номиналов монет для получения целевой суммы в предположении,
+     * что число монет каждого номинала бесконечно*/
+    public int getNumberOfDifferentCombinations(int[] coins, int amount) {
+        int[] combs = new int[amount + 1];
+        combs[0] = 1;
+        for (int coin : coins) {
+            for (int i = coin; i <= amount; i++) {
+                if (i - coin >= 0) {
+                    combs[i] += combs[i - coin];
+                }
+            }
+        }
+        return combs[amount];
+    }
 }
