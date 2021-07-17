@@ -19,8 +19,24 @@ public class UniquePaths {
         }
         return result[m-1][n-1];
     }
-/**@param grid представляет поле в виде элементов с определенной неотрицательной стоимостью
- * @return минимальную сумму элементов при прохождении всего маршрута*/
+
+    /**@param obstacleGrid представляет собой поле с препятствиями, через которые строить маршрут невозможно.
+     *                      Свободное поле - 0, препятствие - 1.
+     *@return число уникальных путей до цели, избегая препятствия*/
+    public int uniquePathsWithObstacles(int[][] obstacleGrid) {
+        int[] dp = new int[obstacleGrid[0].length];
+        dp[0] = 1;
+        for (int[] row : obstacleGrid) {
+            for (int i = 0; i < obstacleGrid[0].length; i++) {
+                if (row[i] == 1) dp[i] = 0;
+                else if (i > 0) dp[i] += dp[i-1];
+            }
+        }
+        return dp[obstacleGrid[0].length-1];
+    }
+
+    /**@param grid представляет поле в виде элементов с определенной неотрицательной стоимостью
+    * @return минимальную сумму элементов при прохождении всего маршрута*/
     public int minPathSum(int[][] grid) {
         int[][] dp = new int[grid.length][grid[0].length];
         dp[0][0] = grid[0][0];
