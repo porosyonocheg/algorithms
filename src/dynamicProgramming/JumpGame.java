@@ -15,4 +15,23 @@ public class JumpGame {
         }
         return false;
     }
+
+    /**@apiNote nums должен гарантировать достижение последнего элемента
+     * @return минимальное число "прыжков" для достижения последнего элемента*/
+    public int minNumberOfJumps(int[] nums) {
+        int currentIndex = 0, jumps = 0;
+        while (currentIndex < nums.length-1) {
+            int maxJump = 0, localIndex = 0;
+            for (int i = currentIndex + 1; i <= currentIndex + nums[currentIndex] && i < nums.length; i++) {
+                int localMax = nums[i] + i;
+                if (localMax > maxJump || localMax >= nums.length-1) {
+                    maxJump = localMax;
+                    localIndex = i;
+                }
+            }
+            currentIndex = localIndex;
+            jumps++;
+        }
+        return jumps;
+    }
 }
