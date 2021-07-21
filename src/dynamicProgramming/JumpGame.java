@@ -1,13 +1,14 @@
 package dynamicProgramming;
 
-/** Элементы массива целых неотрицательных чисел представляют собой максимально возможную длину "прыжка" от данного
- * индекса к последующим. Старт с нулевого индекса.
+/** Перемещение по элементам массива от нулевого к последнему в соответствии с условиями.
  * @author Сергей Шершавин*/
 
 public class JumpGame {
 
-    /**@return true, если возможно достичь последнего элемента, false - в противном случае*/
-    public boolean canJump(int[] nums) {
+    /**@param nums элементы массива целых неотрицательных чисел представляют собой максимально возможную длину "прыжка"
+     *              от данного индекса к последующим
+     * @return true, если возможно достичь последнего элемента, false - в противном случае*/
+    public boolean canReach(int[] nums) {
         int currentIndex = 0;
         for (int i = 0; i <= currentIndex; i++) {
             currentIndex = Math.max(currentIndex, nums[i] + i);
@@ -16,7 +17,26 @@ public class JumpGame {
         return false;
     }
 
-    /**@apiNote nums должен гарантировать достижение последнего элемента
+    /**@param s строка состоящая из '0' и '1'. Возможно перемещаться только на элементы == '0'
+     * @param minJump минимальная "длина прыжка" с текущего индекса
+     * @param maxJump максимальная "длина прыжка" с текущего индекса
+     * @return true, если возможно достичь последнего элемента, false - в противном случае*/
+    public boolean canReach(String s, int minJump, int maxJump) {
+        int i = 1, length = s.length(), diff = 0;
+        if (s.charAt(length-1) == '1') return false;
+        int[] dp = new int[length];
+        dp[0] = 1;
+        for (; i < length; i++) {
+            if (i > maxJump) diff -= dp[i - maxJump - 1];
+            if (i >= minJump) diff += dp[i - minJump];
+            if (s.charAt(i) == '0' && diff > 0) dp[i] = 1;
+        }
+        return dp[length-1] > 0;
+    }
+
+    /**@param nums элементы массива целых неотрицательных чисел представляют собой максимально возможную длину "прыжка"
+     *              от данного индекса к последующим
+     * @apiNote nums должен гарантировать достижение последнего элемента
      * @return минимальное число "прыжков" для достижения последнего элемента*/
     public int minNumberOfJumps(int[] nums) {
         int currentIndex = 0, jumps = 0;
