@@ -34,4 +34,31 @@ public class JumpGame {
         }
         return jumps;
     }
+
+    /**@param nums каждый элемент содержит число очков, которые аккумулируются до достижения последнего элемента
+     * @param k максимальная длина прыжка с текущего индекса
+     * @return максимальное число очков, которое возможно набрать при передвижении от начального элемента к конечному*/
+    public int getMaxScore(int[] nums, int k) {
+        int[] dp = new int[nums.length];
+        dp[dp.length-1] = nums[nums.length-1];
+        int max = dp[dp.length-1], indexOfMax = dp.length-1;
+        for (int i = nums.length-2; i >= 0; i--) {
+            if (indexOfMax > i + k) {
+                max = Integer.MIN_VALUE;
+                int limit = Math.min(dp.length-1, i+k);
+                for (int j = i+1; j <= limit; j++) {
+                    if (dp[j] > max) {
+                        max = dp[j];
+                        indexOfMax = j;
+                    }
+                }
+            }
+            else if (dp[i+1] > max) {
+                max = dp[i+1];
+                indexOfMax = i + 1;
+            }
+            dp[i] = nums[i] + max;
+        }
+        return dp[0];
+    }
 }
