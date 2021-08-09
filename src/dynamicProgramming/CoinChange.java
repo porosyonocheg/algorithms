@@ -2,7 +2,7 @@ package dynamicProgramming;
 
 import java.util.Arrays;
 
-/**
+/** Методы для размена заданной суммы посредством заданных номиналов монет
  *@author Сергей Шершавин*/
 
 public class CoinChange {

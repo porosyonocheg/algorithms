@@ -3,7 +3,7 @@ package dynamicProgramming;
 import java.util.ArrayList;
 import java.util.List;
 
-/**Получение всех возможных кальякуляций при различных комбинациях скобок в математическом выражении
+/**Получение всех возможных калькуляций при различных комбинациях скобок в математическом выражении
  * @author Сергей Шершавин*/
 
 public class DifferentWaysToAddParentheses {
