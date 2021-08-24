@@ -64,6 +64,9 @@
 9. [Получение индексов столбцов, из которых "выпадает мяч"](https://github.com/porosyonocheg/algorithms/blob/master/src/depthFirstSearch/FallingBall.java)
 10. [Получение максимальной длины последовательности элементов массива вида: a{i}, a{a{i}}, a{a{a{i}}},...](https://github.com/porosyonocheg/algorithms/blob/master/src/depthFirstSearch/ArrayNesting.java)
 11. [Поиск безопасных узлов направленного графа](https://github.com/porosyonocheg/algorithms/blob/master/src/depthFirstSearch/FindEventualSafeStates.java)
+12. [Поиск пути с минимальным усилием](https://github.com/porosyonocheg/algorithms/blob/master/src/depthFirstSearch/PathWithMinimumEffort.java)
+13. [Поиск минимально возможного времени для обход дерева с целью сбора всех яблок в его узлах и возвращения в вершину](https://github.com/porosyonocheg/algorithms/blob/master/src/depthFirstSearch/CollectAllApplesInATree.java)
+![](https://assets.leetcode.com/uploads/2020/04/23/min_time_collect_apple_1.png)
 
 ### Задачи с использованием динамического программирования
 1. [Задачи размена суммы монетами заданных номиналов](https://github.com/porosyonocheg/algorithms/blob/master/src/dynamicProgramming/CoinChange.java)
@@ -96,9 +99,11 @@
 28. [Получение размера самой длинной качающейся подпоследовательности](https://github.com/porosyonocheg/algorithms/blob/master/src/dynamicProgramming/WiggleSubsequence.java)
 29. [Разбиение целочисленного массива на подмассивы, значение каждого элемента в которых будет равно максимальному значению в данном подмассиве](https://github.com/porosyonocheg/algorithms/blob/master/src/dynamicProgramming/NetworkDelayTime.java)
 30. [Определение максимального времени задержки при прохождении сигнала от заданного узла до всех остальных](https://github.com/porosyonocheg/algorithms/blob/master/src/dynamicProgramming/NetworkDelayTime.java)
+31. [Задачи подсчёта максимальной прибыли от покупки-продажи акций](https://github.com/porosyonocheg/algorithms/blob/master/src/dynamicProgramming/BestTimeToBuyAndSellStock.java)
 
 ### Задачи с использованием жадного алгоритма
 1. [Поиск минимального необходимого числа стрел необходимого, чтобы лопнуть все шары, размещённые один над другим](https://github.com/porosyonocheg/algorithms/blob/master/src/greedy/MinimumNumberOfArrowsToBurstBalloons.java)
 2. [Поиск максимальной вместимости среди всех контейнеров](https://github.com/porosyonocheg/algorithms/blob/master/src/greedy/ContainerWithMostWater.java)
 3. [Преобразование массива целых чисел в наибольшее возможное целое число, путём слияния элементов](https://github.com/porosyonocheg/algorithms/blob/master/src/greedy/LargestNumber.java)
-4. []()
+4. [Поиск максимального числа курсов, которые возможно пройти](https://github.com/porosyonocheg/algorithms/blob/master/src/greedy/CourseSchedule.java)
+5. [Поиск минимальной суммы нелистовых узлов дерева, построенного на основе произведений максимальных значений листьев поддеревьев каждого узла](https://github.com/porosyonocheg/algorithms/blob/master/src/greedy/MinimumCostTreeFromLeafValues.java)
