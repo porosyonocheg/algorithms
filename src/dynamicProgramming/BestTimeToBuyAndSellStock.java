@@ -18,6 +18,20 @@ public class BestTimeToBuyAndSellStock {
         return infinityTransactions(prices);
     }
 
+    /**@implNote после совершения транзакции (после продажи акции) нельзя покупать акции на следующий день. Число допустимых
+     * транзакций неограничено
+     * @return максимальную прибыль с учётом ограничений*/
+    public int maxProfitWithCoolDown(int[] prices) {
+        int sell = 0, prevSell = 0, buy = Integer.MIN_VALUE, prevBuy;
+        for (int price : prices) {
+            prevBuy = buy;
+            buy = Math.max(prevSell - price, prevBuy); // buy[i] = Math.max(buy[i - 1], sell[i - 2] - prices[i]);
+            prevSell = sell;
+            sell = Math.max(prevBuy + price, prevSell); // sell[i] = Math.max(sell[i - 1], buy[i - 1] + prices[i]);
+        }
+        return sell;
+    }
+
     private int oneTransaction(int[] prices) {
         int max = 0;
         int min = Integer.MAX_VALUE;
