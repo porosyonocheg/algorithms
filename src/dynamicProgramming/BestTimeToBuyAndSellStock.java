@@ -32,6 +32,17 @@ public class BestTimeToBuyAndSellStock {
         return sell;
     }
 
+    public int maxProfitWithTransferFee(int[] prices, int fee) {
+        int sell = 0, prevSell, buy = Integer.MIN_VALUE;
+        for (int price : prices) {
+            prevSell = sell;
+            sell = Math.max(prevSell, buy + price);
+            buy = Math.max(buy, prevSell - price - fee);
+
+        }
+        return sell;
+    }
+
     private int oneTransaction(int[] prices) {
         int max = 0;
         int min = Integer.MAX_VALUE;
