@@ -65,7 +65,11 @@
 10. [Получение максимальной длины последовательности элементов массива вида: a{i}, a{a{i}}, a{a{a{i}}},...](https://github.com/porosyonocheg/algorithms/blob/master/src/depthFirstSearch/ArrayNesting.java)
 11. [Поиск безопасных узлов направленного графа](https://github.com/porosyonocheg/algorithms/blob/master/src/depthFirstSearch/FindEventualSafeStates.java)
 12. [Поиск пути с минимальным усилием](https://github.com/porosyonocheg/algorithms/blob/master/src/depthFirstSearch/PathWithMinimumEffort.java)
-13. [Поиск минимально возможного времени для обход дерева с целью сбора всех яблок в его узлах и возвращения в вершину](https://github.com/porosyonocheg/algorithms/blob/master/src/depthFirstSearch/CollectAllApplesInATree.java)
+13. [Поиск минимальной длины моста для соединения двух островов](https://github.com/porosyonocheg/algorithms/blob/master/src/depthFirstSearch/ShortestBridge.java)
+14. [Подсчёт времени необходимого на оповещение всех сотрудников компании](https://github.com/porosyonocheg/algorithms/blob/master/src/depthFirstSearch/TimeNeededToInformAllEmployees.java)
+15. [Проверка является ли неориентированный граф двудольным](https://github.com/porosyonocheg/algorithms/blob/master/src/depthFirstSearch/IsGraphBipartite.java)
+16. [Поиск минимально возможного времени для обход дерева с целью сбора всех яблок в его узлах и возвращения в вершину](https://github.com/porosyonocheg/algorithms/blob/master/src/depthFirstSearch/CollectAllApplesInATree.java)
+
 ![](https://assets.leetcode.com/uploads/2020/04/23/min_time_collect_apple_1.png)
 
 ### Задачи с использованием динамического программирования
@@ -100,6 +104,7 @@
 29. [Разбиение целочисленного массива на подмассивы, значение каждого элемента в которых будет равно максимальному значению в данном подмассиве](https://github.com/porosyonocheg/algorithms/blob/master/src/dynamicProgramming/NetworkDelayTime.java)
 30. [Определение максимального времени задержки при прохождении сигнала от заданного узла до всех остальных](https://github.com/porosyonocheg/algorithms/blob/master/src/dynamicProgramming/NetworkDelayTime.java)
 31. [Задачи подсчёта максимальной прибыли от покупки-продажи акций](https://github.com/porosyonocheg/algorithms/blob/master/src/dynamicProgramming/BestTimeToBuyAndSellStock.java)
+32. [Поиск минимальной цены полёта из одного города в другой с ограничением на количество транзитных городов](https://github.com/porosyonocheg/algorithms/blob/master/src/dynamicProgramming/CheapestFlightsWithinKStops.java)
 
 ### Задачи с использованием жадного алгоритма
 1. [Поиск минимального необходимого числа стрел необходимого, чтобы лопнуть все шары, размещённые один над другим](https://github.com/porosyonocheg/algorithms/blob/master/src/greedy/MinimumNumberOfArrowsToBurstBalloons.java)
