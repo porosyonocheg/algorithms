@@ -48,6 +48,42 @@ public class Islands {
         return count;
     }
 
+    /**@param grid представлена элементами 1, обозначающими сушу, и 0, обозначающими море.
+     * @return количество единиц суши, входящих в острова, некасающиеся границ матрицы*/
+    public int getNumberOfEnclaves(int[][] grid) {
+        int count = 0;
+        int m = grid.length;
+        int n = grid[0].length;
+
+        for (int i = 0; i < n; i++) {
+            if (grid[0][i] == 1) clearTheMap(grid, 0, i, m, n);
+            if (grid[m-1][i] == 1) clearTheMap(grid, m-1, i, m, n);
+        }
+
+        for (int i = 0; i < m; i++) {
+            if (grid[i][0] == 1) clearTheMap(grid, i, 0, m, n);
+            if (grid[i][n-1] == 1) clearTheMap(grid, i, n-1, m, n);
+        }
+
+        for (int i = 1; i < m-1; i++) {
+            for (int j = 1; j < n-1; j++) {
+                if (grid[i][j] == 1) {
+                    count ++;
+                }
+            }
+        }
+        return count;
+    }
+
+    private void clearTheMap(int[][] grid, int i, int j, int m, int n) {
+        if (grid[i][j] == 0) return;
+        grid[i][j] = 0;
+        if (i < m - 1) clearTheMap(grid, i+1, j, m, n);
+        if (i > 0) clearTheMap(grid, i-1, j, m, n);
+        if (j < n - 1) clearTheMap(grid, i, j+1, m, n);
+        if (j > 0) clearTheMap(grid, i, j-1, m, n);
+    }
+
     private void flood(int[][] grid, int x, int y) {
         if (x < 0 || y < 0 || x == grid.length || y == grid[0].length || grid[x][y] == 1) return;
         grid[x][y] = 1;
