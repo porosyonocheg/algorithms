@@ -75,6 +75,36 @@ public class Islands {
         return count;
     }
 
+    private boolean isSubIsland;
+    /**@apiNote Размер матриц должен быть одинаков
+     * @param grid1 представлена элементами 1, обозначающими сушу, и 0, обозначающими море.
+     * @param grid2 представлена элементами 1, обозначающими сушу, и 0, обозначающими море.
+     * @return Количество островов из grid2 являющихся подостровами в grid1. Иными словами количество островов в grid2
+     * которое соответствует суше в grid1*/
+    public int countSubIslands(int[][] grid1, int[][] grid2) {
+        int count = 0;
+        for (int i = 0; i < grid1.length; i++) {
+            for (int j = 0; j < grid1[0].length; j++) {
+                if (grid2[i][j] == 1){
+                    isSubIsland = true;
+                    dfs(grid1, grid2, i, j);
+                    if (isSubIsland) count++;
+                }
+            }
+        }
+        return count;
+    }
+
+    private void dfs(int[][] grid1, int[][] grid2, int i, int j) {
+        if (i < 0 || j < 0 || i == grid1.length || j == grid1[0].length || grid2[i][j] == 0) return;
+        if (grid1[i][j] != 1) isSubIsland = false;
+        grid2[i][j] = 0;
+        dfs(grid1, grid2, i+1, j);
+        dfs(grid1, grid2, i-1, j);
+        dfs(grid1, grid2, i, j+1);
+        dfs(grid1, grid2, i, j-1);
+    }
+
     private void clearTheMap(int[][] grid, int i, int j, int m, int n) {
         if (grid[i][j] == 0) return;
         grid[i][j] = 0;
