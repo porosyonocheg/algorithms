@@ -68,9 +68,15 @@
 13. [Поиск минимальной длины моста для соединения двух островов](https://github.com/porosyonocheg/algorithms/blob/master/src/depthFirstSearch/ShortestBridge.java)
 14. [Подсчёт времени необходимого на оповещение всех сотрудников компании](https://github.com/porosyonocheg/algorithms/blob/master/src/depthFirstSearch/TimeNeededToInformAllEmployees.java)
 15. [Проверка является ли неориентированный граф двудольным](https://github.com/porosyonocheg/algorithms/blob/master/src/depthFirstSearch/IsGraphBipartite.java)
-16. [Поиск минимально возможного времени для обход дерева с целью сбора всех яблок в его узлах и возвращения в вершину](https://github.com/porosyonocheg/algorithms/blob/master/src/depthFirstSearch/CollectAllApplesInATree.java)
+16. [Поиск узла во взвешенном ненаправленном графе с наименьшим числом достижимых соседних узлов, находящихся на расстоянии не превышающем пороговое](https://github.com/porosyonocheg/algorithms/blob/master/src/depthFirstSearch/CityWithSmallestNumberOfNeighborsAtThresholdDistance.java)
+17. [Поиск минимально возможного времени для обход дерева с целью сбора всех яблок в его узлах и возвращения в вершину](https://github.com/porosyonocheg/algorithms/blob/master/src/depthFirstSearch/CollectAllApplesInATree.java)
 
 ![](https://assets.leetcode.com/uploads/2020/04/23/min_time_collect_apple_1.png)
+
+### Задачи с использованием поиска в ширину
+1. [Поиск возможности прохождения курсов согласно распорядку](https://github.com/porosyonocheg/algorithms/blob/master/src/breadthFirstSearch/CourseSchedule.java)
+2. [Поиск деревьев с минимальной высотой](https://github.com/porosyonocheg/algorithms/blob/master/src/breadthFirstSearch/MinimumHeightTrees.java)
+3. [Поиск минимального числа перестановок кодового замка от стартового до получения целевого значения](https://github.com/porosyonocheg/algorithms/blob/master/src/breadthFirstSearch/OpenTheLock.java)
 
 ### Задачи с использованием динамического программирования
 1. [Задачи размена суммы монетами заданных номиналов](https://github.com/porosyonocheg/algorithms/blob/master/src/dynamicProgramming/CoinChange.java)
@@ -105,6 +111,8 @@
 30. [Определение максимального времени задержки при прохождении сигнала от заданного узла до всех остальных](https://github.com/porosyonocheg/algorithms/blob/master/src/dynamicProgramming/NetworkDelayTime.java)
 31. [Задачи подсчёта максимальной прибыли от покупки-продажи акций](https://github.com/porosyonocheg/algorithms/blob/master/src/dynamicProgramming/BestTimeToBuyAndSellStock.java)
 32. [Поиск минимальной цены полёта из одного города в другой с ограничением на количество транзитных городов](https://github.com/porosyonocheg/algorithms/blob/master/src/dynamicProgramming/CheapestFlightsWithinKStops.java)
+33. [Набор нажатий кнопок мобильного телефона путём перемещения по ним шахматного коня](https://github.com/porosyonocheg/algorithms/blob/master/src/dynamicProgramming/KnightDialer.java)
+34. [Определение наибольшего количества очков, которые может дать пара в массиве](https://github.com/porosyonocheg/algorithms/blob/master/src/dynamicProgramming/BestSightseeingPair.java)
 
 ### Задачи с использованием жадного алгоритма
 1. [Поиск минимального необходимого числа стрел необходимого, чтобы лопнуть все шары, размещённые один над другим](https://github.com/porosyonocheg/algorithms/blob/master/src/greedy/MinimumNumberOfArrowsToBurstBalloons.java)
@@ -112,3 +120,9 @@
 3. [Преобразование массива целых чисел в наибольшее возможное целое число, путём слияния элементов](https://github.com/porosyonocheg/algorithms/blob/master/src/greedy/LargestNumber.java)
 4. [Поиск максимального числа курсов, которые возможно пройти](https://github.com/porosyonocheg/algorithms/blob/master/src/greedy/CourseSchedule.java)
 5. [Поиск минимальной суммы нелистовых узлов дерева, построенного на основе произведений максимальных значений листьев поддеревьев каждого узла](https://github.com/porosyonocheg/algorithms/blob/master/src/greedy/MinimumCostTreeFromLeafValues.java)
+6. [Поиск минимального числа интервалов, которые необходимо удалить из intervals, чтобы остались только непересекающиеся](https://github.com/porosyonocheg/algorithms/blob/master/src/greedy/NonOverlappingIntervals.java)
+
+### Задачи с использованием скользящего окна
+1. [Поиск самой длинной подстроки состоящей из одинаковых символов, получающейся при замене не более k любых символов в переданной строке](https://github.com/porosyonocheg/algorithms/blob/master/src/slidingWindow/LongestRepeatingCharacterReplacement.java)
+2. [Поиск величины самой длинной подстроки без повторяющихся символов](https://github.com/porosyonocheg/algorithms/blob/master/src/slidingWindow/LongestSubstringWithoutRepeatingCharacters.java)
+3. [Проверка содержит ли одна строка последовательную перестановку символов из другой строки](https://github.com/porosyonocheg/algorithms/blob/master/src/slidingWindow/PermutationInString.java)

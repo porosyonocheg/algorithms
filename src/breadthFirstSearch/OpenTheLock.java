@@ -2,10 +2,16 @@ package breadthFirstSearch;
 
 import java.util.*;
 
-/**
+/** Подбор кода к замку. За одно перемещение можно изменить одну цифру по или против часовой стрелки, например:
+ * 0 -> 1 или 0 -> 9.
  * @author Сергей Шершавин*/
 
 public class OpenTheLock {
+
+    /**@apiNote замок начинает открываться с позиции 0000
+     * @param target целевое значение, открывающее замок
+     * @param deadends перечень значений, которые блокируют дальнейший процесс открытия и которые требуется избегать
+     * @return минимальное число перемещений, которое требуется для достижения цели или -1, если достижение цели невозможно*/
     public int getMinTurns(String[] deadends, String target) {
         Deque<String> queue = new ArrayDeque<>();
         queue.addFirst("0000");
