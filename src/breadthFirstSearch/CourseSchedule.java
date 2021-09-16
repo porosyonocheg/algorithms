@@ -73,4 +73,45 @@ public class CourseSchedule {
         }
         return index == numCourses ? result : new int[0];
     }
+
+    /**@param numCourses общее число курсов
+     * @param prerequisites prerequisites[i][0] - номер курса, который должен быть пройден перед прохождением
+     *                      курса prerequisites[i][1]
+     * @param queries массив запросов, является ли queries[j][0] предкурсом для queries[j][1].
+     * @return список результатов запросов по queries.*/
+    public List<Boolean> checkIfPrerequisite(int numCourses, int[][] prerequisites, int[][] queries) {
+        List<Integer>[] graph = new List[numCourses];
+        int[] indegrees = new int[numCourses];
+        for (int i = 0; i < numCourses; i++) {
+            graph[i] = new ArrayList<>();
+        }
+
+        for (int[] p : prerequisites) {
+            graph[p[0]].add(p[1]);
+            indegrees[p[1]]++;
+        }
+        Queue<Integer> queue = new LinkedList<>();
+        for (int i = 0; i < indegrees.length; i++) {
+            if (indegrees[i] == 0) queue.add(i);
+        }
+
+        boolean[][] connected = new boolean[numCourses][numCourses];
+        while (!queue.isEmpty()) {
+            int current = queue.poll();
+            for (int next : graph[current]) {
+                connected[current][next] = true;
+                for (int i = 0; i < numCourses; i++) {
+                    if (connected[i][current]) connected[i][next] = true;
+                }
+                indegrees[next]--;
+                if (indegrees[next] == 0) queue.add(next);
+            }
+        }
+
+        List<Boolean> results = new ArrayList<>();
+        for (int[] query : queries) {
+            results.add(connected[query[0]][query[1]]);
+        }
+        return results;
+    }
 }
